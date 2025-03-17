@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+@import '@app/styles/mediaMixin.scss';
+
+$fnt-size: 24px;
+
+.sidebarContent {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    min-width: 320px;
+    height: 100vh;
+
+    .sidebarContent__header {
+        width: 100%;
+
+        .sidebarContent__brand {
+            padding: 3vw 0;
+            text-align: center;
+        }
+
+        .sidebarContent__info {
+            font-family: "Pinyon Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 24px;
+            padding: 10px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+    }
+
+    .sidebarContent__main {
+        padding: 0 10px;
+        flex-direction: column;
+        display: flex;
+        height: 100vh;
+        justify-content: space-between;
+
+        .sidebarContent__navigation {
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            font-size: $fnt-size;
+
+
+            a {
+                font-weight: 700;
+                padding: 0 0 25px 0;
+            }
+        }
+
+        .sidebarContent__footer {
+            padding: 50px 10px;
+
+            span {
+                font-size: $fnt-size;
+                font-weight: 700;
+            }
+        }
+    }
+
+}
+
+@include _320 {
+    .sidebarContent {
+        .sidebarContent__header {
+            .sidebarContent__brand {
+                font-size: 4vw;
+                padding: 3vw 0;
+            }
+            .sidebarContent__info{
+                font-size: 7vw;
+            }
+        }
+    }
+
+}
+
+@include _768 {
+    .sidebarContent {
+        .sidebarContent__header {
+            .sidebarContent__brand {
+                font-size: 2vw;
+                padding: 10px;
+            }
+            .sidebarContent__info{
+                font-size: 4vw;
+            }
+        }
+    }
+
+}
+
+@include _1024 {
+    .sidebarContent {
+        .sidebarContent__header {
+            .sidebarContent__brand {
+                font-size: 1.5vw;
+            }
+            .sidebarContent__info{
+                font-size: 3vw;
+            }
+        }
+    }
+}
+
+@include _1440 {
+    .sidebarContent {
+        .sidebarContent__header {
+            .sidebarContent__brand {
+                font-size: 1.3vw;
+            }
+            .sidebarContent__info{
+                font-size: 2.3vw;
+            }
+        }
+    }
+}
+
+@include _1920 {
+    .sidebarContent {
+        .sidebarContent__header {
+            .sidebarContent__brand {
+                font-size: 1vw;
+            }
+            .sidebarContent__info{
+                font-size: 2vw;
+            }
+        }
+    }
+
+}

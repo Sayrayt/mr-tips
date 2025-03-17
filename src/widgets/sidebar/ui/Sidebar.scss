@@ -1,0 +1,11 @@
+@import '@app/styles/mediaMixin.scss';
+
+.sidebar {
+    min-width: 320px;
+}
+
+@include _1920 {
+    .sidebar {
+        min-width: 400px;
+    }
+}

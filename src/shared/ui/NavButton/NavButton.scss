@@ -1,0 +1,128 @@
+@import '@app/styles/mediaMixin.scss';
+
+$btn-color: linear-gradient(90deg, #0769A8, #1996E5);
+
+.navButton__container {
+    padding: 0 5px;
+
+    .navButton__item {
+        position: relative;
+        background: transparent;
+        border-radius: 25px;
+        padding: 2vw 1.8vw;
+        width: 100%;
+        font-size: 0.5rem;
+        cursor: pointer;
+        min-width: 60px;
+        max-width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: $btn-color;
+            mask:
+                linear-gradient(white 0 0) content-box,
+                linear-gradient(white 0 0);
+            mask-composite: exclude;
+            -webkit-mask:
+                linear-gradient(white 0 0) content-box,
+                linear-gradient(white 0 0);
+            -webkit-mask-composite: xor;
+            z-index: -1;
+        }
+
+        &:hover {
+            background: rgba(#0769A8, 0.2);
+        }
+
+        &.navButton__item-active {
+            background: $btn-color;
+        }
+
+        &.navButton__item-primary {
+            background: $btn-color;
+            color: black;
+            width: 30vw;
+            text-align: center;
+        }
+    }
+}
+
+@include _320 {
+    .navButton__container {
+        .navButton__item {
+
+            &.navButton__item-primary {
+                background: $btn-color;
+                color: black;
+                width: 50vw;
+                text-align: center;
+            }
+        }
+        
+    }
+}
+
+@include _768 {
+    .navButton__container {
+        .navButton__item {
+            width: 15vw;
+            font-size: 0.6rem;
+            padding: 1vw 1.5vw;
+
+            &.navButton__item-primary {
+                background: $btn-color;
+                color: black;
+                width: 100vw;
+                text-align: center;
+            }
+        }
+        
+    }
+}
+
+@include _1024 {
+    .navButton__container {
+        .navButton__item {
+            width: 12vw;
+            font-size: 0.7rem;
+            padding: 0.5vw 0.7vw;
+
+            &.navButton__item-primary {
+                background: $btn-color;
+                color: black;
+                width: 150vw;
+                text-align: center;
+                white-space: nowrap;
+            }
+        }
+
+      
+    }
+}
+
+@include _1440 {
+    .navButton__container {
+        .navButton__item {
+            width: 8vw;
+            font-size: 0.7rem;
+            padding: 0.3vw 0.5vw;
+
+            &.navButton__item-primary {
+                background: $btn-color;
+                color: black;
+                // width: 100vw;
+                text-align: center;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+

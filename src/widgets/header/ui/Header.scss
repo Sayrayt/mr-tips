@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
+@import "@app/styles/mediaMixin.scss";
+
+.header {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    &__container {
+        width: 100%;
+        max-width: 100%;
+        min-width: 320px;
+
+        .header__brand {
+            font-size: 4vw;
+            padding: 3vw 0;
+            text-align: center;
+        }
+
+        .header__content {
+            font-family: "Pinyon Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 7vw;
+            padding: 10px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+    }
+
+}
+
+@include _768 {
+    .header {
+        &__container {
+            .header__brand {
+                font-size: 2vw;
+                padding: 10px;
+            }
+
+            .header__content {
+                padding: 10px 30px;
+                font-size: 4vw;
+            }
+        }
+    }
+}
+
+@include _1024 {
+    .header {
+        &__container {
+            .header__brand {
+                padding: 10px;
+                font-size: 1.5vw;
+            }
+
+            .header__content {
+                padding: 10px 40px;
+                font-size: 3vw;
+            }
+        }
+    }
+}
+
+@include _1440 {
+    .header {
+        &__container {
+            .header__brand {
+                padding: 10px;
+                font-size: 1.3vw;
+            }
+
+            .header__content {
+                padding: 10px 80px;
+                font-size: 2.3vw;
+            }
+        }
+    }
+}
+
+@include _1920 {
+    .header {
+        &__container {
+            .header__brand {
+                padding: 10px;
+                font-size: 1vw;
+            }
+
+            .header__content {
+                padding: 10px 160px;
+                font-size: 2vw;
+            }
+        }
+    }
+}

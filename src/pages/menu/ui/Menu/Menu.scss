@@ -1,0 +1,72 @@
+@import '@app/styles/mediaMixin.scss';
+
+.menu {
+    width: 100%;
+    min-width: 320px;
+    height: 100vh;
+
+    .menu__content {
+        padding: 0 20px;
+
+        h2 {
+            font-size: 7vw;
+        }
+    }
+}
+
+@include _768 {
+    .menu {
+
+        .menu__content {
+            padding: 0 50px;
+
+            h2 {
+                font-size: 4vw;
+            }
+        }
+
+    }
+}
+
+
+@include _1024 {
+    .menu {
+
+        .menu__content {
+            padding: 0 50px;
+
+            h2 {
+                font-size: 3vw;
+            }
+        }
+
+    }
+}
+
+@include _1440 {
+    .menu {
+
+        .menu__content {
+            padding: 0 100px;
+
+            h2 {
+                font-size: 2vw;
+            }
+        }
+
+    }
+}
+
+@include _1920 {
+    .menu {
+
+        .menu__content {
+            padding: 0 200px;
+
+            h2 {
+                font-size: 1.8vw;
+            }
+        }
+
+    }
+}
