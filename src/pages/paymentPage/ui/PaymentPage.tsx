@@ -11,7 +11,7 @@ function PaymentPage() {
                 </div>
                 <Separator />
             </div>
-            
+    
         </div>
     )
 }
