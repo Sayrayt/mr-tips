@@ -6,7 +6,7 @@ import { MenuBlock } from '@widgets/menuBlock';
 
 import { JSX } from '@emotion/react/jsx-runtime';
 
-export function Menu(): JSX.Element {
+function Menu(): JSX.Element {
     const titles = [
         {
             title: 'Завтрак',
@@ -55,3 +55,5 @@ export function Menu(): JSX.Element {
         </div>
     )
 }
+
+export default Menu;

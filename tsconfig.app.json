@@ -3,10 +3,15 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable",
+      "dom",
+      "esnext"
+    ],
     "module": "ESNext",
     "skipLibCheck": true,
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -14,25 +19,37 @@
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
-
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-
     "baseUrl": "./src",
     "paths": {
       // "@features/*": ["features/*"],
-      "@shared/*": ["./shared/*"],
-      "@widgets/*": ["./widgets/*"],
-      "@pages/*": ["./pages/*"],
+      "@shared/*": [
+        "./shared/*"
+      ],
+      "@widgets/*": [
+        "./widgets/*"
+      ],
+      "@pages/*": [
+        "./pages/*"
+      ],
       // "@entities/*": ["entities/*"],
-      "@app/*": ["./app/*"],
-      "@assets/*": ["./assets/*"],
-      "types": ["node"],
+      "@app/*": [
+        "./app/*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "types": [
+        "node"
+      ],
     }
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

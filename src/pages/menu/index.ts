@@ -1,1 +1,1 @@
-export { Menu } from './ui/Menu'
+export { default as Menu } from "@pages/menu/ui/Menu/Menu"

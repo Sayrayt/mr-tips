@@ -1,17 +1,14 @@
 import '@app/styles/index.scss'
+import { RouterProvider } from "react-router-dom";
 
-import { Menu } from '@pages/menu'
+import Router from '@app/provider/Router'
+
 
 import { JSX } from '@emotion/react/jsx-runtime';
 
 function App(): JSX.Element {
   return (
-    <>
-      <div className="app">
-        <Menu />
-      </div>
-
-    </>
+    <RouterProvider router={Router} />
   )
 }
 
