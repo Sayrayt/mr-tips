@@ -1,7 +1,6 @@
 import './SidebarContent.scss'
 
-import { Separator } from '@shared/ui/Separator'
-import { IconButton } from '@shared/ui/IconButton'
+import { Separator, IconButton } from '@shared/index'
 
 import { IconButtonProps } from '@shared/model/interfaces/IconButtonProps'
 import { JSX } from '@emotion/react/jsx-runtime';

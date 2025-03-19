@@ -1,0 +1,85 @@
+@import '@app/styles/mediaMixin.scss';
+
+.paymentBlock {
+    height: auto;
+    padding: 0 2vh;
+
+    &__price {
+        padding: 0 0 2vh 0;
+
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+
+@include _425 {
+    .paymentBlock {
+
+        &__price {
+            padding: 0 0 2vh 0;
+
+        }
+
+        &__buttons {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+
+@include _768{
+    .paymentBlock {
+
+        &__price {
+            padding: 0 0 2vh 0;
+
+        }
+
+        &__buttons {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+
+@include _1024{
+    .paymentBlock {
+        padding: 0 15%;
+
+        &__price {
+            padding: 0 0 2vh 0;
+
+        }
+
+        &__buttons {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+
+@include _1920{
+    .paymentBlock {
+        padding: 0 25%;
+
+        &__price {
+            padding: 0 0 2vh 0;
+
+        }
+
+        &__buttons {
+
+            justify-self: center;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}

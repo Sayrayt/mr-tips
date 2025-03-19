@@ -1,0 +1,217 @@
+@import '@app/styles/mediaMixin.scss';
+
+$btn-color-active: #59CD90;
+$btn-color: #D9D9D9;
+
+.paymentButton {
+    padding: 5px 0;
+    cursor: pointer;
+
+    .paymentButton__content,
+    .paymentButton__content-active {
+        background-color: $btn-color;
+        min-width: 40px;
+        padding: 10px;
+        height: auto;
+        border-radius: 25px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: all 0.3s ease;
+
+        &:hover {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transform: scale(1.03);
+        }
+
+        .paymentButton__price {
+            padding-top: 1vh;
+        }
+
+        span {
+            font-size: 4vw;
+        }
+
+        .paymentButton__dishesCount {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            .paymentButton__price {
+                font-size: 3.3vw;
+            }
+        }
+    }
+
+
+    .paymentButton__content-active {
+        background-color: $btn-color-active;
+    }
+}
+
+@include _425 {
+    .paymentButton {
+        padding: 0 5px;
+
+        .paymentButton__content,
+        .paymentButton__content-active {
+            width: auto;
+            height: 15vw;
+
+            .paymentButton__price {
+                padding-top: 0.6vh;
+            }
+
+            span {
+                font-size: 2.8vw;
+            }
+
+            .paymentButton__dishesCount {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+
+                .paymentButton__price {
+                    font-size: 2.7vw;
+                }
+            }
+        }
+    }
+}
+
+@include _768 {
+    .paymentButton {
+        padding: 0 5px;
+
+        .paymentButton__content,
+        .paymentButton__content-active {
+            width: auto;
+            height: 10vw;
+
+            .paymentButton__price {
+                padding-top: 0.6vh;
+            }
+
+            span {
+                font-size: 2.3vw;
+            }
+
+            .paymentButton__dishesCount {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+
+                .paymentButton__price {
+                    font-size: 1.5vw;
+                }
+            }
+        }
+    }
+}
+
+@include _1024 {
+    .paymentButton {
+        padding: 0 5px;
+
+        .paymentButton__content,
+        .paymentButton__content-active {
+            width: auto;
+            height: 9vw;
+
+            span {
+                font-size: 1rem
+            }
+
+            .paymentButton__price {
+                font-size: 0.8rem;
+                padding-top: 0.8vh;
+            }
+
+            
+
+            .paymentButton__dishesCount {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+
+                .paymentButton__price {
+                    font-size: 0.6rem;
+                }
+            }
+        }
+    }
+}
+
+@include _1440 {
+    .paymentButton {
+        padding: 0 5px;
+
+        .paymentButton__content,
+        .paymentButton__content-active {
+            width: auto;
+            height: 6vw;
+
+            span {
+                font-size: 0.9rem
+            }
+
+            .paymentButton__price {
+                font-size: 0.7rem;
+                padding-top: 0.8vh;
+            }
+
+            
+
+            .paymentButton__dishesCount {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+
+                .paymentButton__price {
+                    font-size: 0.6rem;
+                }
+            }
+        }
+    }
+}
+
+@include _1920 {
+    .paymentButton {
+        padding: 0 5px;
+
+        .paymentButton__content,
+        .paymentButton__content-active {
+            width: auto;
+            height: 4vw;
+
+            span {
+                font-size: 0.9rem
+            }
+
+            .paymentButton__price {
+                font-size: 0.7rem;
+                padding-top: 0.8vh;
+            }
+
+            
+
+            .paymentButton__dishesCount {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+
+                .paymentButton__price {
+                    font-size: 0.6rem;
+                }
+            }
+        }
+    }
+}

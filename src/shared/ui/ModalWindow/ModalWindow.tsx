@@ -4,7 +4,7 @@ import Modal from '@mui/material/Modal';
 import Backdrop from '@mui/material/Backdrop';
 import Fade from '@mui/material/Fade';
 
-import { IconButton } from '@shared/ui/IconButton';
+import { IconButton } from '@shared/index';
 import { FiX } from "react-icons/fi";
 
 import { JSX } from '@emotion/react/jsx-runtime';

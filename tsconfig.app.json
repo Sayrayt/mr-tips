@@ -6,10 +6,10 @@
     "lib": [
       "ES2020",
       "DOM",
-      "DOM.Iterable",
-      "dom",
-      "esnext"
+      "DOM.Iterable"
     ],
+    "esModuleInterop": true,
+
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
@@ -46,7 +46,7 @@
       ],
       "types": [
         "node"
-      ],
+      ]
     }
   },
   "include": [

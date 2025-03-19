@@ -4,6 +4,7 @@ import { createBrowserRouter, Route, createRoutesFromElements } from "react-rout
 // import ProtectedRoute from "@/pages/Auth/ProtectedRoute";
 // import ProcessingPage from "./ProcessingPage";
 // import ErrorFallback from "./ErrorFallback";
+const Loading = lazy(() => import("@pages/loading").then(module => ({ default: module.Loading })));
 
 const Menu = lazy(() => import("@pages/menu").then(module => ({ default: module.Menu })));
 const PaymentPage = lazy(() => import("@pages/paymentPage").then(module => ({ default: module.PaymentPage })));
@@ -14,7 +15,7 @@ const Router = createBrowserRouter(
             <Route
                 path="/"
                 element={
-                    <Suspense fallback={<h1>Загрузка...</h1>}>
+                    <Suspense fallback={<Loading />}>
                         <Menu />
                     </Suspense>
                 }
@@ -25,7 +26,7 @@ const Router = createBrowserRouter(
             <Route
                 path="/payment"
                 element={
-                    <Suspense fallback={<h1>Загрузка...</h1>}>
+                    <Suspense fallback={ <Loading />}>
                         <PaymentPage />
                     </Suspense>
                 }

@@ -1,7 +1,6 @@
 
 import './Header.scss'
-import { IconButton } from '@shared/ui/IconButton'
-import { Separator } from '@shared/ui/Separator'
+import { IconButton, Separator } from '@shared/index'
 import { Sidebar } from '@widgets/sidebar'
 
 import { useState } from 'react';
@@ -13,7 +12,7 @@ import { JSX } from '@emotion/react/jsx-runtime';
 export function Header(): JSX.Element {
     const [open, setOpen] = useState<boolean>(false);
 
-    const toggleDrawer = () : void => {
+    const toggleDrawer = (): void => {
         setOpen(!open);
     };
 

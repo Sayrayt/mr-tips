@@ -1,1 +1,1 @@
-export { default as PaymentPage } from "@pages/paymentPage/ui/paymentPage";
+export { default as PaymentPage } from "@pages/paymentPage/ui/PaymentPage/PaymentPage";
