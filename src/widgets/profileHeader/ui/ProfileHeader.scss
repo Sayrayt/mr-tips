@@ -1,0 +1,24 @@
+$bg-color: #2569ED;
+
+.profile-header {
+    width: 100%;
+    background-color: $bg-color;
+    height: 109px;
+    display: flex;
+    align-items: center;
+
+    &__container {}
+
+    &__logo-container {
+        .profile-header__logo {
+            font-size: 48px;
+            line-height: 100%;
+            letter-spacing: 0;
+        }
+    }
+
+    .logo {
+        font-family: 'Poppins';
+        font-weight: 600;
+    }
+}
