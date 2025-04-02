@@ -1,4 +1,4 @@
-@import '@app/styles/mediaMixin.scss';
+@use '../../../../app/styles/helpers' as *;
 
 .paymentPage {
     width: 100%;
@@ -23,7 +23,7 @@
     }
 }
 
-@include _1920 {
+@include desktop_1920 {
     .paymentPage {
         .paymentPage__header {
             .paymentPage__brand {
@@ -36,7 +36,7 @@
     }
 }
 
-@include _1440 {
+@include desktop_1440 {
     .paymentPage {
         .paymentPage__header {
             .paymentPage__brand {
@@ -46,7 +46,7 @@
     }
 }
 
-@include _1024 {
+@include desktop_1024 {
     .paymentPage {
         .paymentPage__header {
             .paymentPage__brand {
@@ -59,7 +59,7 @@
     }
 }
 
-@include _768 {
+@include tablet_768 {
     .paymentPage {
         .paymentPage__header {
             .paymentPage__brand {

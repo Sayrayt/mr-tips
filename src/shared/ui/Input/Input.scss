@@ -1,0 +1,60 @@
+@use '../../../app/styles/helpers' as *;
+
+$border-color: #2569ED;
+
+.input {
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    transition: all 0.3s ease;
+    padding: 8px;
+
+    &::placeholder {
+        color: #999;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: $border-color;
+        box-shadow: 0 0 0 2px rgba(25, 150, 229, 0.1);
+    }
+
+    &:disabled {
+        background-color: #F5F5F5;
+        cursor: not-allowed;
+    }
+
+    &--error {
+        border-color: #FF4D4F;
+
+        &:focus {
+            box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.1);
+        }
+    }
+
+    &--success {
+        border-color: #52C41A;
+
+        &:focus {
+            box-shadow: 0 0 0 2px rgba(82, 196, 26, 0.1);
+        }
+    }
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 362px;
+}
+
+.error-message {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    color: #FF4D4F;
+    font-size: 12px;
+    line-height: 1.5;
+}

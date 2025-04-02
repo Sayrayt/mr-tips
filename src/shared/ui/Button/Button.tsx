@@ -3,8 +3,8 @@ import './Button.scss'
 import { ButtonProps } from '@shared/model/interfaces/ButtonProps';
 import { JSX } from '@emotion/react/jsx-runtime';
 
-export function Button({ children }: ButtonProps): JSX.Element {
+export function Button({ children, variant, action }: ButtonProps): JSX.Element {
     return (
-        <button className='button'>{children}</button>
+        <button className={`button button--${variant}`} onClick={action}>{children}</button>
     )
 }

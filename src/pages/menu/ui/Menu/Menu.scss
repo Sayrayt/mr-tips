@@ -1,4 +1,4 @@
-@import '@app/styles/mediaMixin.scss';
+@use '../../../../app/styles/helpers' as *;
 
 .menu {
     width: 100%;
@@ -14,7 +14,7 @@
     }
 }
 
-@include _768 {
+@include tablet_768 {
     .menu {
 
         .menu__content {
@@ -29,7 +29,7 @@
 }
 
 
-@include _1024 {
+@include desktop_1024 {
     .menu {
 
         .menu__content {
@@ -43,7 +43,7 @@
     }
 }
 
-@include _1440 {
+@include desktop_1440 {
     .menu {
 
         .menu__content {
@@ -57,7 +57,7 @@
     }
 }
 
-@include _1920 {
+@include desktop_1920 {
     .menu {
 
         .menu__content {

@@ -1,4 +1,4 @@
-@import '@app/styles/mediaMixin.scss';
+@use "../../../app/styles/helpers" as *;
 
 $border-color: linear-gradient(90deg, #0769A8, #1996E5);
 
@@ -51,7 +51,7 @@ $border-color: linear-gradient(90deg, #0769A8, #1996E5);
     }
 }
 
-@include _1440 {
+@include desktop_1440 {
     .menuBlockItem {
         width: 20vw;
 
@@ -68,7 +68,7 @@ $border-color: linear-gradient(90deg, #0769A8, #1996E5);
     }
 }
 
-@include _1024 {
+@include desktop_1024 {
     .menuBlockItem {
         width: 20vw;
 
@@ -85,7 +85,7 @@ $border-color: linear-gradient(90deg, #0769A8, #1996E5);
     }
 }
 
-@include _768 {
+@include tablet_768 {
     .menuBlockItem {
         width: 17vw;
 
@@ -102,7 +102,7 @@ $border-color: linear-gradient(90deg, #0769A8, #1996E5);
     }
 }
 
-@include _1440 {
+@include desktop_1440 {
     .menuBlockItem {
         width: 14vw;
         border-radius: 30px;
@@ -120,7 +120,7 @@ $border-color: linear-gradient(90deg, #0769A8, #1996E5);
     }
 }
 
-@include _1920 {
+@include desktop_1920 {
     .menuBlockItem {
         width: 10vw;
         border-radius: 30px;

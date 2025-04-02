@@ -1,4 +1,4 @@
-@import "@app/styles/mediaMixin.scss";
+@use "../../../app/styles/helpers" as *;
 
 .ModalMenuItem {
     display: flex;
@@ -47,7 +47,7 @@
 
 }
 
-@include _768 {
+@include tablet_768 {
     .ModalMenuItem {
         display: flex;
         height: inherit;
@@ -60,7 +60,7 @@
     }
 }
 
-@include _1440 {
+@include desktop_1440 {
     .ModalMenuItem {
         display: flex;
         height: inherit;
@@ -92,7 +92,7 @@
     }
 }
 
-@include _1920 {
+@include desktop_1920 {
     .ModalMenuItem {
         display: flex;
         height: inherit;

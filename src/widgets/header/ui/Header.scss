@@ -1,6 +1,6 @@
+@use '../../../app/styles/helpers' as *;
 @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
 
-@import "@app/styles/mediaMixin.scss";
 
 .header {
     flex-direction: column;
@@ -34,7 +34,7 @@
 
 }
 
-@include _768 {
+@include tablet_768 {
     .header {
         &__container {
             .header__brand {
@@ -50,7 +50,7 @@
     }
 }
 
-@include _1024 {
+@include desktop_1024 {
     .header {
         &__container {
             .header__brand {
@@ -66,7 +66,7 @@
     }
 }
 
-@include _1440 {
+@include desktop_1440 {
     .header {
         &__container {
             .header__brand {
@@ -82,7 +82,7 @@
     }
 }
 
-@include _1920 {
+@include desktop_1920 {
     .header {
         &__container {
             .header__brand {

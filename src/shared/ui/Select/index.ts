@@ -1,0 +1,1 @@
+export { MultipleSelectPlaceholder } from './MultipleSelectChip/ui/MultipleSelectPlaceholder';

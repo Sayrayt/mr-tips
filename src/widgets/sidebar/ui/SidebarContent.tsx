@@ -7,7 +7,7 @@ import { JSX } from '@emotion/react/jsx-runtime';
 
 export default function SidebarContent({ action, icon }: IconButtonProps): JSX.Element {
 
-    const routes = [{ path: '/', name: 'Меню' }, { path: '/order', name: 'Мой заказ' }, { path: '/payment', name: 'Оплатить' }]
+    const routes = [{ path: '/', name: 'Меню' }, { path: '/menu/order', name: 'Мой заказ' }, { path: '/menu/payment', name: 'Оплатить' }]
 
     return (
         <div className="sidebarContent">

@@ -12,6 +12,7 @@ export default function Profile() {
         { path: '/profile/orders', name: 'Оформить заказ' },
         { path: '/profile/institution', name: 'Заведение' },
         { path: '/profile/qr-code', name: 'QR-код' },
+        { path: '/profile/balance', name: 'Баланс' },
         { path: '/profile/transactions', name: 'Транзакции' },
         { path: '/profile/login', name: 'Выход' },
     ]
@@ -19,13 +20,16 @@ export default function Profile() {
     return (
         <div className='profile'>
             <ProfileHeader />
-            <nav>
-                {links.map((link) => (
-                    <Link key={link.path} to={link.path}>{link.name}</Link>
-                ))}
-            </nav>
 
-            <Outlet />
+            <div className="profile__container">
+                <nav className='profile__container-nav'>
+                    {links.map((link) => (
+                        <Link className='profile__container-nav-link' key={link.path} to={link.path}>{link.name}</Link>
+                    ))}
+                </nav>
+
+                <Outlet />
+            </div>
         </div>
     );
 }

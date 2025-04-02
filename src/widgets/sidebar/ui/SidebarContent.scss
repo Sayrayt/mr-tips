@@ -1,5 +1,7 @@
+
+@use '../../../app/styles/helpers' as *;
 @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
-@import '@app/styles/mediaMixin.scss';
+
 
 $fnt-size: 24px;
 
@@ -64,7 +66,7 @@ $fnt-size: 24px;
 
 }
 
-@include _320 {
+@include mobile_320 {
     .sidebarContent {
         .sidebarContent__header {
             .sidebarContent__brand {
@@ -79,7 +81,7 @@ $fnt-size: 24px;
 
 }
 
-@include _768 {
+@include tablet_768 {
     .sidebarContent {
         .sidebarContent__header {
             .sidebarContent__brand {
@@ -94,7 +96,7 @@ $fnt-size: 24px;
 
 }
 
-@include _1024 {
+@include desktop_1024 {
     .sidebarContent {
         .sidebarContent__header {
             .sidebarContent__brand {
@@ -107,7 +109,7 @@ $fnt-size: 24px;
     }
 }
 
-@include _1440 {
+@include desktop_1440 {
     .sidebarContent {
         .sidebarContent__header {
             .sidebarContent__brand {
@@ -120,7 +122,7 @@ $fnt-size: 24px;
     }
 }
 
-@include _1920 {
+@include desktop_1920 {
     .sidebarContent {
         .sidebarContent__header {
             .sidebarContent__brand {
