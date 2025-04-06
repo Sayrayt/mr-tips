@@ -112,15 +112,3 @@
     line-height: 100%;
     letter-spacing: 0;
 }
-
-@include desktop_1920 {
-    .profile-orders {
-        &__content {
-            .profile-orders__placing {
-                .profile-orders__placing-title {
-                    color: green
-                }
-            }
-        }
-    }
-}

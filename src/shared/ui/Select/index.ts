@@ -1,1 +1,1 @@
-export { MultipleSelectPlaceholder } from './MultipleSelectChip/ui/MultipleSelectPlaceholder';
+export { MultipleSelectPlaceholder } from './MultipleSelectPlaceholder/ui/MultipleSelectPlaceholder';
