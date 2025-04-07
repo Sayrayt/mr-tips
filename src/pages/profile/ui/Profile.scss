@@ -1,0 +1,32 @@
+@use '../../../app/styles/helpers' as *;
+
+.profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+
+        &-nav {
+            max-width: 250px;
+            width: 100%;
+            margin: 40px 0 0 148px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 25px;      
+
+            &-link {
+                @include fluid-text(32, 24);
+                font-family: 'Roboto';
+                font-weight: 400;
+                line-height: 100%;
+                letter-spacing: 0;
+            }
+        }
+    }
+
+
+}

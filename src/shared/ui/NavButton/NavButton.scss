@@ -1,4 +1,4 @@
-@import '@app/styles/mediaMixin.scss';
+@use '../../../app/styles/helpers' as *;
 
 $btn-color: linear-gradient(90deg, #0769A8, #1996E5);
 
@@ -58,7 +58,7 @@ $btn-color: linear-gradient(90deg, #0769A8, #1996E5);
     }
 }
 
-@include _320 {
+@include mobile_320 {
     .navButton__container {
         .navButton__item {
 
@@ -73,7 +73,7 @@ $btn-color: linear-gradient(90deg, #0769A8, #1996E5);
     }
 }
 
-@include _768 {
+@include tablet_768 {
     .navButton__container {
         .navButton__item {
             width: 15vw;
@@ -91,7 +91,7 @@ $btn-color: linear-gradient(90deg, #0769A8, #1996E5);
     }
 }
 
-@include _1024 {
+@include desktop_1024 {
     .navButton__container {
         .navButton__item {
             width: 12vw;
@@ -111,7 +111,7 @@ $btn-color: linear-gradient(90deg, #0769A8, #1996E5);
     }
 }
 
-@include _1440 {
+@include desktop_1440 {
     .navButton__container {
         .navButton__item {
             width: 8vw;

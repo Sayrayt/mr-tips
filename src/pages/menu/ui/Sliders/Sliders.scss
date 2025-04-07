@@ -1,4 +1,4 @@
-@import '@app/styles/mediaMixin.scss';
+@use '../../../../app/styles/helpers' as *;
 
 .sliders {
     padding-top: 20px;
@@ -31,7 +31,7 @@
     }
 }
 
-@include _768 {
+@include tablet_768 {
     .sliders {
         .sliders__item {
             img {
@@ -41,7 +41,7 @@
     }
 }
 
-@include _1440 {
+@include desktop_1440 {
     .sliders {
         .sliders__item {
             img {

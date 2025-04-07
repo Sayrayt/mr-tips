@@ -1,4 +1,4 @@
-@import '@app/styles/mediaMixin.scss';
+@use '../../../../app/styles/helpers' as *;
 
 $block-color: #D9D9D9;
 
@@ -58,13 +58,13 @@ $block-color: #D9D9D9;
 }
 
 
-@include _1024 {
+@include desktop_1024 {
     .reviewBlock{
         padding: 0 15%;
     }
 }
 
-@include _1920 {
+@include desktop_1920 {
     .reviewBlock{
         padding: 0 35%;
     }

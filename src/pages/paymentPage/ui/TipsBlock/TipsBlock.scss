@@ -1,4 +1,4 @@
-@import '@app/styles/mediaMixin.scss';
+@use '../../../../app/styles/helpers' as *;
 
 .tipsBlock {
     padding: 0 2vh;
@@ -21,7 +21,7 @@
 }
 
 
-@include _1024 {
+@include desktop_1024 {
     .tipsBlock {
         padding: 0 15%;
 
@@ -35,7 +35,7 @@
     }
 }
 
-@include _1920 {
+@include desktop_1920 {
     .tipsBlock {
         padding: 0 25%;
 

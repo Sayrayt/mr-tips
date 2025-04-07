@@ -1,10 +1,6 @@
-import { fileURLToPath } from 'url';
-import path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
@@ -12,11 +8,17 @@ export default defineConfig({
     alias: {
       '@app': path.resolve(__dirname, 'src/app'),
       '@widgets': path.resolve(__dirname, 'src/widgets'),
-      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@styles': path.resolve(__dirname, 'src/app/styles'),
       '@shared': path.resolve(__dirname, 'src/shared'),
       '@pages': path.resolve(__dirname, 'src/pages'),
       '@assets': path.resolve(__dirname, 'src/assets'),
-      "@": path.resolve(__dirname, "src"),
     }
-  }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@styles/helpers/mixins" as *;`,
+      },
+    },
+  },
 });

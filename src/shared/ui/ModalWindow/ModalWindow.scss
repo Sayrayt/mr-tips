@@ -1,4 +1,4 @@
-@import "@app/styles/mediaMixin.scss";
+@use '../../../app/styles/helpers' as *;
 
 .modalWindow {
     min-width: 90vw;
@@ -41,7 +41,7 @@
     }
 }
 
-@include _1920 {
+@include desktop_1920 {
     .modalWindow {
         min-width: 40vw;
 
@@ -60,7 +60,7 @@
 
 }
 
-@include _1440 {
+@include desktop_1440 {
     .modalWindow {
         min-width: 40vw;
     }

@@ -1,0 +1,27 @@
+@use '../../../app/styles/helpers' as *;
+
+$bg-color: #2569ED;
+
+.profile-header {
+    width: 100%;
+    background-color: $bg-color;
+    height: 109px;
+    display: flex;
+    align-items: center;
+
+    &__container {
+        padding: 0 0 0 148px;
+    }
+
+    &__logo-container {
+        .profile-header__logo {}
+    }
+
+    .logo {
+        @include fluid-text(48, 32);
+        font-family: 'Poppins';
+        font-weight: 600;
+        line-height: 100%;
+        letter-spacing: 0;
+    }
+}

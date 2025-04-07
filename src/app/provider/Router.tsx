@@ -8,12 +8,14 @@ const Loading = lazy(() => import("@pages/loading").then(module => ({ default: m
 
 const Menu = lazy(() => import("@pages/menu").then(module => ({ default: module.Menu })));
 const PaymentPage = lazy(() => import("@pages/paymentPage").then(module => ({ default: module.PaymentPage })));
+const Profile = lazy(() => import("@pages/profile").then(module => ({ default: module.Profile })));
+const ProfileOrders = lazy(() => import("@pages/profileOrders").then(module => ({ default: module.ProfileOrders })));
 
 const Router = createBrowserRouter(
     createRoutesFromElements(
         <>
             <Route
-                path="/"
+                path="/menu"
                 element={
                     <Suspense fallback={<Loading />}>
                         <Menu />
@@ -23,10 +25,11 @@ const Router = createBrowserRouter(
                     <h1>Ошибка</h1>
                 }
             />
+
             <Route
-                path="/payment"
+                path="/menu/payment"
                 element={
-                    <Suspense fallback={ <Loading />}>
+                    <Suspense fallback={<Loading />}>
                         <PaymentPage />
                     </Suspense>
                 }
@@ -34,7 +37,30 @@ const Router = createBrowserRouter(
                     <h1>Ошибка</h1>
                 }
             />
+
+            <Route
+                path="/profile"
+                element={
+                    <Suspense fallback={<Loading />}>
+                        <Profile />
+                    </Suspense>
+                }
+                errorElement={<h1>Ошибка</h1>}
+            >
+                {/* Вложенные маршруты внутри профиля */}
+                <Route
+                    path="orders"
+                    element={
+                        <Suspense fallback={<Loading />}>
+                            <ProfileOrders />
+                        </Suspense>
+                    }
+                />
+            </Route>
+
         </>
+
+
     )
 );
 
