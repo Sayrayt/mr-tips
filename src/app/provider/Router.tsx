@@ -8,8 +8,10 @@ const Loading = lazy(() => import("@pages/loading").then(module => ({ default: m
 
 const Menu = lazy(() => import("@pages/menu").then(module => ({ default: module.Menu })));
 const PaymentPage = lazy(() => import("@pages/paymentPage").then(module => ({ default: module.PaymentPage })));
-const Profile = lazy(() => import("@pages/profile").then(module => ({ default: module.Profile })));
-const ProfileOrders = lazy(() => import("@pages/profileOrders").then(module => ({ default: module.ProfileOrders })));
+const ProfileLayout = lazy(() => import("@pages/profilePage/profileLayout").then(module => ({ default: module.ProfileLayout })));
+const Profile = lazy(() => import("@pages/profilePage/profile").then(module => ({ default: module.Profile })));
+const QRCode = lazy(() => import("@pages/profilePage/QRCode").then(module => ({ default: module.QRCode })));
+const Orders = lazy(() => import('@pages/profilePage/orders').then(module => ({ default: module.Orders })));
 
 const Router = createBrowserRouter(
     createRoutesFromElements(
@@ -42,17 +44,35 @@ const Router = createBrowserRouter(
                 path="/profile"
                 element={
                     <Suspense fallback={<Loading />}>
-                        <Profile />
+                        <ProfileLayout />
                     </Suspense>
                 }
                 errorElement={<h1>Ошибка</h1>}
             >
                 {/* Вложенные маршруты внутри профиля */}
                 <Route
+                    index
+                    element={
+                        <Suspense fallback={<Loading />}>
+                            <Profile />
+                        </Suspense>
+                    }
+                />
+
+                <Route
                     path="orders"
                     element={
                         <Suspense fallback={<Loading />}>
-                            <ProfileOrders />
+                            <Orders />
+                        </Suspense>
+                    }
+                />
+
+                <Route
+                    path="qr-code"
+                    element={
+                        <Suspense fallback={<Loading />}>
+                            <QRCode />
                         </Suspense>
                     }
                 />

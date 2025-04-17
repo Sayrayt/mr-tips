@@ -1,0 +1,33 @@
+@use '../../../../app/styles/helpers' as *;
+
+.input {
+    font-family: Rubik;
+    @include fluid-text(40, 24);
+    font-weight: 400;
+    border: rem(3) solid var(--color-blue-main);
+    width: 100%;
+    border-radius: rem(50);
+    color: var(--color-black);
+    max-height: rem(78.76);
+    height: 100%;
+    line-height: rem(28);
+    padding: rem(26.88) rem(47);
+    transition:  0.3s ease;
+
+    &--small {
+        max-width: rem(420);
+        width: 100%;
+    }
+
+    &--disabled {
+        transition:  0.3s ease;
+        cursor: not-allowed;
+        background-color: var(--color-grey-disabled);
+        color: var(--color-white);
+        
+        &:hover {
+          cursor: not-allowed;
+        }
+      }
+}
+

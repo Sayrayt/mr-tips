@@ -1,0 +1,1 @@
+export { default as ProfileLayout } from '@pages/profilePage/profileLayout/ui/ProfileLayout';

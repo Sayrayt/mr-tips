@@ -1,27 +1,27 @@
 @use '../../../app/styles/helpers' as *;
 
-$bg-color: #2569ED;
-
 .profile-header {
     width: 100%;
-    background-color: $bg-color;
-    height: 109px;
-    display: flex;
-    align-items: center;
+    background-color: var(--color-blue-main);
+    min-height: rem(109);
+    border-radius: 55px;
 
     &__container {
-        padding: 0 0 0 148px;
-    }
+        margin: 0 101px;
+        height: 100%;
+        display: flex;
+        align-items: center;
 
-    &__logo-container {
-        .profile-header__logo {}
+        &-logo {
+            padding: 0;
+        }
     }
+}
 
-    .logo {
-        @include fluid-text(48, 32);
-        font-family: 'Poppins';
-        font-weight: 600;
-        line-height: 100%;
-        letter-spacing: 0;
-    }
+.logo {
+    @include fluid-text(55, 32);
+    font-family: 'Rubik';
+    font-weight: 800;
+    color: var(--color-white);
+    line-height: 39px;
 }

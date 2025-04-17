@@ -1,1 +1,0 @@
-export { MultipleSelectPlaceholder } from './MultipleSelectPlaceholder/ui/MultipleSelectPlaceholder';
