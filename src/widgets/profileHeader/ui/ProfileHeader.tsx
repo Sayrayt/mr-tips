@@ -8,9 +8,7 @@ export function ProfileHeader(): JSX.Element {
     return (
         <header className="profile-header">
             <div className="profile-header__container">
-                <div className="profile-header__logo-container ">
-                    <Link to="/profile" className='profile-header__logo logo'>MR. TIPS</Link>
-                </div>
+                    <Link to="/profile" className='profile-header__container-logo logo'>MR. TIPS</Link>
             </div>
         </header>
     )

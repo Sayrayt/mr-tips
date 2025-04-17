@@ -15,7 +15,8 @@ const getBaseHost = () => {
 */
 export const instance: AxiosInstance = axios.create({
     withCredentials: true,
-    baseURL: `http://${getBaseHost()}:5555/api`,
+    // baseURL: `http://${getBaseHost()}:5555/api`,
+    baseURL: `${getBaseHost()}`,
 });
 
 /* 

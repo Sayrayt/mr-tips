@@ -1,1 +1,0 @@
-export { default as ProfileOrders  } from '@pages/profileOrders/ui/ProfileOrders'
