@@ -6,6 +6,7 @@ npm run dev
 
 ## Адрес сервера
 Адрес сервера находится в переменной окружения .env.development
+Остальная часть внутри  /shared/api/apiConfig.ts
 
 ## Сервис запросов 
 Все запросы с энд-поинтами находятся в /shared/api/apiService.ts
