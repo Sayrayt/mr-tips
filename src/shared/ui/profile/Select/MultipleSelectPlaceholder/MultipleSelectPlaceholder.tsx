@@ -17,14 +17,13 @@ const MenuProps = {
   },
 };
 
-const names = [
-  'Товар 1',
-  'Товар 2',
-  'Товар 3',
-  'Товар 4',
-  'Товар 5',
-  'Товар 6',
+const defaultItems = [
+  'Товар 1', 'Товар 2', 'Товар 3', 'Товар 4', 'Товар 5', 'Товар 6',
+  'Товар 7', 'Товар 8', 'Товар 9', 'Товар 10', 'Товар 11', 'Товар 12',
 ];
+
+
+const names: string[] = [];
 
 function getStyles(name: string, personName: readonly string[], theme: Theme) {
   return {
@@ -37,11 +36,16 @@ function getStyles(name: string, personName: readonly string[], theme: Theme) {
 interface MultipleSelectPlaceholderProps {
   selectedItems: string[];
   setSelectedItems: React.Dispatch<React.SetStateAction<string[]>>;
+  productList: string[];
 }
 
-export function MultipleSelectPlaceholder({ selectedItems, setSelectedItems }: MultipleSelectPlaceholderProps) {
+export function MultipleSelectPlaceholder({ selectedItems, setSelectedItems, productList }: MultipleSelectPlaceholderProps) {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState<string[]>(selectedItems);
+
+  const itemsToDisplay = React.useMemo(() => {
+    return productList && productList.length > 0 ? productList : defaultItems;
+  }, [productList]);
 
   const handleChange = (event: SelectChangeEvent<typeof personName>) => {
     const { target: { value } } = event;
@@ -95,7 +99,7 @@ export function MultipleSelectPlaceholder({ selectedItems, setSelectedItems }: M
           <MenuItem disabled value="">
             <span>Товар</span>
           </MenuItem>
-          {names.map((name) => (
+          {itemsToDisplay.map((name) => (
             <MenuItem
               key={name}
               value={name}
