@@ -1,1 +1,0 @@
-export { default as QRCode } from '@pages/profilePage/QRCode/ui/QRCode';

@@ -1,15 +1,11 @@
-import '@app/styles/index.scss'
+import '@app/styles/index.scss';
 import { RouterProvider } from "react-router-dom";
+import React from 'react';
 
-import Router from '@app/provider/Router'
+import Router from '@app/provider/Router';
 
-
-import { JSX } from '@emotion/react/jsx-runtime';
-
-function App(): JSX.Element {
-  return (
-    <RouterProvider router={Router} />
-  )
+const App: React.FC = () => {
+  return <RouterProvider router={Router} />;
 }
 
-export default App
+export default App;

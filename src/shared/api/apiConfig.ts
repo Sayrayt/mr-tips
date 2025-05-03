@@ -1,13 +1,5 @@
 import axios, { AxiosInstance } from "axios";
 
-// Определение базового хоста в зависимости от окружения
-const getBaseHost = () => {
-    if (import.meta.env.DEV) {
-        return import.meta.env.VITE_DEV_SERV;
-    }
-    return window.location.hostname;
-};
-
 /*
     Экземпляр axios с пользовательской конфигурацией
     @param withCredentials - разрешает отправку cookies в кросс-доменных запросах
@@ -16,12 +8,11 @@ const getBaseHost = () => {
 export const instance: AxiosInstance = axios.create({
     withCredentials: true,
     // baseURL: `http://${getBaseHost()}:5555/api`,
-    baseURL: `${getBaseHost()}`,
+    baseURL: import.meta.env.VITE_DEV_SERV || window.location.hostname
 });
 
-/* 
-    Перехватчик запросов 
-*/
+
+//Перехватчик запросов 
 instance.interceptors.request.use(
     (config) => {
         config.headers.Authorization = `Bearer ${localStorage.getItem("accessToken")}`;

@@ -17,16 +17,6 @@ const apiService = {
         return instance.get('')
     },
 
-    //Запрос на получение qr-кода для чаевых
-    getTipsQRcode(data: any) {
-        return instance.get('', data)
-    },
-
-    //Запрос на получение qr-кода для меню
-    getMenuQRcode(data: any) {
-        return instance.get('', data)
-    },
-
     //Запрос на оформление заказа(Должен быть post)
     createOrder(data: any) {
         return instance.get('', data)
@@ -45,7 +35,9 @@ const apiService = {
     //Запрос на обновление истории заказов
     updateOrdersHistory() {
         return instance.get('')
-    }
+    },
+
+    
 
 };
 

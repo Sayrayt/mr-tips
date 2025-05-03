@@ -27,7 +27,6 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": "./src",
     "paths": {
-      // "@features/*": ["features/*"],
       "@shared/*": [
         "./shared/*"
       ],
@@ -40,17 +39,20 @@
       "@pages/*": [
         "./pages/*"
       ],
-      // "@entities/*": ["entities/*"],
       "@app/*": [
         "./app/*"
       ],
       "@assets/*": [
         "./assets/*"
-      ],
-      "types": [
-        "node"
       ]
-    }
+    },
+
+    "types": [
+      "node",
+      "react", 
+      "react-dom"
+    ]
+
   },
   "include": [
     "src"

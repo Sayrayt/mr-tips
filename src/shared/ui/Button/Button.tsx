@@ -1,10 +1,20 @@
 import './Button.scss'
+import React, { JSX } from 'react';
 
-import { ButtonProps } from '@shared/model/interfaces/ButtonProps';
-import { JSX } from '@emotion/react/jsx-runtime';
+interface ButtonProps {
+    children?: string;
+    icon?: string | JSX.Element;
+    variant?: 'primary' | 'secondary';
+    size?: 'small' | 'medium';
+    action: () => void;
+}
 
-export function Button({ children, variant, action, size }: ButtonProps): JSX.Element {
+export const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', action, size = 'medium', icon }) => {
+    const buttonClass = `button button--${variant} button--${size}`;
+
     return (
-        <button className={`button button--${variant} button--${size}`} onClick={action}>{children}</button>
-    )
+        <button className={icon ? 'button--icon' : buttonClass} onClick={action}>
+            {icon ? icon : children}
+        </button>
+    );
 }
