@@ -14,16 +14,16 @@
 .profile-layout {
     height: 100vh;
     width: 100%;
-    // display: flex;
-    // flex-direction: column;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow: hidden;
 
 
     &__container {
         display: flex;
-        // flex-direction: row;
+        flex-direction: row;
+        // height: 100vh;
         flex: 1;
 
         &-nav {
@@ -31,11 +31,9 @@
             width: 100%;
             border-radius: rem(55);
             background: #F5F5F5;
+            height: calc(100vh - rem(109));
             position: sticky;
-            top: rem(109); // Высота хедера, подстройте под вашу
-            height: calc(100vh - 60px); // Высота экрана минус высота хедера
-            overflow-y: auto;
-            z-index: 90;
+            top: rem(109);
         }
 
         &-links {
@@ -115,6 +113,8 @@
             display: flex;
             justify-content: center;
             padding: rem(50) rem(105) 0 rem(105);
+            overflow-y: auto;
+            height: calc(100vh - rem(109));
         }
     }
 
