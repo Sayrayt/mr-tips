@@ -1,11 +1,11 @@
-import apiService from '@shared/api/apiService';
+import ordersApiService from './ordersApiService';
 
-import { CreateOrderProps } from '../model/interfaces/order';
+import { CreateOrderProps } from '@pages/orders/model/interfaces/ordersInterface';
 
 export const createOrder = async ({ tableNumber, selectedItems }: CreateOrderProps) => {
     try {
         const data = { tableNumber, selectedItems };
-        const response = await apiService.createOrder(data);
+        const response = await ordersApiService.createOrder(data);
         if (response && response.status === 200) {
             return response.data;
         }
@@ -18,7 +18,7 @@ export const createOrder = async ({ tableNumber, selectedItems }: CreateOrderPro
 
 export const getProducts = async () => {
     try {
-        const response = await apiService.getProducts();
+        const response = await ordersApiService.getProducts();
         if (response && response.status === 200) {
             return response.data;
         }

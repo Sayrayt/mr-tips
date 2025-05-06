@@ -1,19 +1,26 @@
 import './Orders.scss';
+
 import { useState, useEffect } from 'react';
+
 import { Input, MultipleSelectPlaceholder, DeletableChip, Button } from '@shared/index';
-import { Order } from '@entities/order/model/interfaces/order';
-import { createOrder, getProducts } from '@entities/order/api/orderApi';
+import { createOrder, getProducts } from '@pages/orders/api/ordersRequestHandler';
+import { newOrderMock } from '@pages/orders/__mocks__/ordersMocks';
+
+import { Order, CreateOrderProps } from '@pages/orders/model/interfaces/ordersInterface';
+
 
 export default function Orders() {
     const [selectedItems, setSelectedItems] = useState<string[]>([]);
     const [tableNumber, setTableNumber] = useState<number>(1);
     const [history, setHistory] = useState<Order[]>([]);
-    const [productList, setProductList] = useState<string[]>([]); // TODO: Добавить тип для продуктов
+    const [productList, setProductList] = useState<string[]>([]); //! Добавить тип для продуктов
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
                 const response = await getProducts();
+
+
                 setProductList(response);
             } catch (error) {
                 setProductList([]);
@@ -26,20 +33,19 @@ export default function Orders() {
     /**
      * Обработчик нажатия на кнопку "Оформить"
      */
-    const handleCreateOrder = async () => {
+    const handleCreateOrder = async ({ tableNumber, selectedItems }: CreateOrderProps) => {
         try {
             const payload = { tableNumber, selectedItems };
             const response = await createOrder(payload);
-            console.log(response);
-            
 
-            // !!!!!!!!!!!!!!!Убрать отрицание
-            const newOrder = response || {
-                orderNumber: history.length + 1,
-                date: '17.04.2025',
-                tableNumber: tableNumber,
-                selectedItems: [...selectedItems]
-            };
+            //! Убрать отрицание
+            const newOrder = response || newOrderMock;
+            // {
+            //     orderNumber: history.length + 1,
+            //     date: '17.04.2025',
+            //     tableNumber: tableNumber,
+            //     selectedItems: [...selectedItems]
+            // };
 
             setHistory(prev => [...prev, newOrder]);
 
@@ -106,7 +112,7 @@ export default function Orders() {
                 <div className="orders__footer">
                     <div className="orders__footer-spacer" />
                     <div className="orders__footer-button">
-                        <Button variant="secondary" action={handleCreateOrder}>
+                        <Button variant="secondary" action={() => handleCreateOrder({ tableNumber, selectedItems })}>
                             Оформить
                         </Button>
                     </div>
@@ -119,9 +125,9 @@ export default function Orders() {
                 </div>
                 <div className="orders__history-content">
                     {history.length > 0 ? (
-                        history.map((order) => (
+                        history.map((order, index) => (
 
-                            <div className="orders__history-item" key={order.orderNumber}>
+                            <div className="orders__history-item" key={`orderNumber${index}`}>
                                 <div className="orders__history-item-header">
                                     <span className="orders__history-item-title item-title">
                                         Заказ №{order.orderNumber}

@@ -24,6 +24,11 @@ export default function QRCode() {
         setMenusQR('');
     }, [tableNumber])
 
+    /**
+     * Загружает qr-коды
+     * @param type тип меню
+     * @param value номер заказа | номер стола
+     */
     const fetchQRCode = async (type: 'tips' | 'menu', value: number) => {
         if (!value) {
             return;

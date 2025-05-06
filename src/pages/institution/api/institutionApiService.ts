@@ -11,7 +11,9 @@ const institutionApiService = {
     //Запрос на получение данных сотрудников заведения
     getInstitutionEmployees() {
         return instance.get('')
-    }
+    },
+
 }
 
 export default institutionApiService;
+

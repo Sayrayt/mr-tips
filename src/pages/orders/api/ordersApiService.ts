@@ -1,22 +1,6 @@
-import { instance } from "./apiConfig";
+import { instance } from "@shared/api/apiConfig";
 
-//Сервис для выполнения запросов к API
-const apiService = {
-
-    test() {
-        return instance.get('/test')
-    },
-
-    //Запрос на обновление данных пользователя
-    updateUserData(data: any) {
-        return instance.put('', data)
-    },
-
-    //Запрос на получение данных пользователя
-    getUserData() {
-        return instance.get('')
-    },
-
+const ordersApiService = {
     //Запрос на оформление заказа(Должен быть post)
     createOrder(data: any) {
         return instance.get('', data)
@@ -36,9 +20,6 @@ const apiService = {
     updateOrdersHistory() {
         return instance.get('')
     },
+}
 
-    
-
-};
-
-export default apiService;
+export default ordersApiService;

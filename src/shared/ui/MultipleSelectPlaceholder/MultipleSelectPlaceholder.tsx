@@ -4,6 +4,7 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { defaultItems } from '@shared/ui/MultipleSelectPlaceholder/__mocks__/MultipleSelectPlaceholderMock';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -16,14 +17,6 @@ const MenuProps = {
     },
   },
 };
-
-const defaultItems = [
-  'Товар 1', 'Товар 2', 'Товар 3', 'Товар 4', 'Товар 5', 'Товар 6',
-  'Товар 7', 'Товар 8', 'Товар 9', 'Товар 10', 'Товар 11', 'Товар 12',
-];
-
-
-const names: string[] = [];
 
 function getStyles(name: string, personName: readonly string[], theme: Theme) {
   return {
