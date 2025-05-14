@@ -8,10 +8,37 @@ const QRCode = lazy(() => import("@pages/QRCode/QRCode"));
 const Orders = lazy(() => import('@pages/orders/Orders'));
 const Institution = lazy(() => import('@pages/institution/Institution'));
 const Balance = lazy(() => import('@pages/balance/Balance'));
+const Transactions = lazy(() => import('@pages/transactions/Transactions'));
+const Tips = lazy(() => import('@pages/tips/Tips'));
+const Login = lazy(() => import('@pages/login/Login'));
+const Registration = lazy(() => import('@pages/registration/Registration'));
 
 const Router = createBrowserRouter(
     createRoutesFromElements(
         <>
+            <Route
+                index
+                path="/"
+                element={
+                    <Suspense fallback={<Loading />}>
+                        <Login />
+                    </Suspense>
+                }
+                errorElement={<h1>Ошибка</h1>}
+            />
+
+            <Route
+
+                path="/registration"
+                element={
+                    <Suspense fallback={<Loading />}>
+                        <Registration />
+                    </Suspense>
+                }
+                errorElement={<h1>Ошибка</h1>}
+            />
+
+
             <Route
                 path="/profile"
                 element={
@@ -41,6 +68,15 @@ const Router = createBrowserRouter(
                 />
 
                 <Route
+                    path="institution"
+                    element={
+                        <Suspense fallback={<Loading />}>
+                            <Institution />
+                        </Suspense>
+                    }
+                />
+
+                <Route
                     path="qr-code"
                     element={
                         <Suspense fallback={<Loading />}>
@@ -59,13 +95,24 @@ const Router = createBrowserRouter(
                 />
 
                 <Route
-                    path="institution"
+                    path="transactions"
                     element={
                         <Suspense fallback={<Loading />}>
-                            <Institution />
+                            <Transactions />
                         </Suspense>
                     }
                 />
+
+                <Route
+                    path="tips"
+                    element={
+                        <Suspense fallback={<Loading />}>
+                            <Tips />
+                        </Suspense>
+                    }
+                />
+
+
             </Route>
 
         </>

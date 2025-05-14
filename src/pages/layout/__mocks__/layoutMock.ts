@@ -5,5 +5,6 @@ export const links = [
     { path: '/profile/qr-code', name: 'QR-код' },
     { path: '/profile/balance', name: 'Баланс' },
     { path: '/profile/transactions', name: 'Транзакции' },
-    { path: '/profile/login', name: 'Выход' },
+    { path: '/profile/tips', name: 'Чаевые' },
+    { path: '/  ', name: 'Выход' },
 ]
