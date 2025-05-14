@@ -10,7 +10,6 @@ interface InputProps {
     variant?: InputVariant;
     value?: string | number;
     onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-    className?: string;
     disabled?: boolean;
     error?: string;
     size?: 'small' | 'medium' | 'large' | '';

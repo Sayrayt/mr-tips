@@ -7,6 +7,7 @@ const Profile = lazy(() => import("@pages/profile/Profile"));
 const QRCode = lazy(() => import("@pages/QRCode/QRCode"));
 const Orders = lazy(() => import('@pages/orders/Orders'));
 const Institution = lazy(() => import('@pages/institution/Institution'));
+const Balance = lazy(() => import('@pages/balance/Balance'));
 
 const Router = createBrowserRouter(
     createRoutesFromElements(
@@ -44,6 +45,15 @@ const Router = createBrowserRouter(
                     element={
                         <Suspense fallback={<Loading />}>
                             <QRCode />
+                        </Suspense>
+                    }
+                />
+
+                <Route
+                    path="balance"
+                    element={
+                        <Suspense fallback={<Loading />}>
+                            <Balance />
                         </Suspense>
                     }
                 />
