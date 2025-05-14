@@ -1,3 +1,4 @@
+import { Transactions } from "@pages/profilePage/transactions";
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, Route, createRoutesFromElements } from "react-router-dom";
 
@@ -73,6 +74,15 @@ const Router = createBrowserRouter(
                     element={
                         <Suspense fallback={<Loading />}>
                             <QRCode />
+                        </Suspense>
+                    }
+                />
+
+                <Route
+                    path="transactions"
+                    element={
+                        <Suspense fallback={<Loading />}>
+                            <Transactions />
                         </Suspense>
                     }
                 />

@@ -37,9 +37,10 @@ interface MultipleSelectPlaceholderProps {
   selectedItems: string[];
   setSelectedItems: React.Dispatch<React.SetStateAction<string[]>>;
   productList: string[];
+  height?: string
 }
 
-export function MultipleSelectPlaceholder({ selectedItems, setSelectedItems, productList }: MultipleSelectPlaceholderProps) {
+export function MultipleSelectPlaceholder({ selectedItems, setSelectedItems, productList, height = "78.75px"}: MultipleSelectPlaceholderProps) {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState<string[]>(selectedItems);
 
@@ -65,7 +66,8 @@ export function MultipleSelectPlaceholder({ selectedItems, setSelectedItems, pro
             padding: '27px',
             textAlign: 'center',
             borderRadius: '50px',
-            height: '78.75px',
+            height: height,
+            
             border: '3px solid var(--color-blue-main)',
           }}
           multiple
