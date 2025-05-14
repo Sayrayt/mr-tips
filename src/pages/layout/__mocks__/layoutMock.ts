@@ -6,5 +6,5 @@ export const links = [
     { path: '/profile/balance', name: 'Баланс' },
     { path: '/profile/transactions', name: 'Транзакции' },
     { path: '/profile/tips', name: 'Чаевые' },
-    { path: '/  ', name: 'Выход' },
+    { path: '/', name: 'Выход' },
 ]

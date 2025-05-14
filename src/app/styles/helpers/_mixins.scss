@@ -6,3 +6,10 @@
   line-height: 100%;
   letter-spacing: 0;
 }
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}

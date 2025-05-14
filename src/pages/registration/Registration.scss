@@ -1,8 +1,17 @@
+@use '../../app/styles/helpers' as *;   
+
+.registration-layout{
+    width: 100vw;
+    height: 100vh;
+  
+}
+
 .wrapper { 
     display: flex;
     flex-direction: row;
     width: 90vw;
     max-width: 600px;
+    @include abs-center;
 }
 
 .signup-form-container { 

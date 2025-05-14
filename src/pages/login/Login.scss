@@ -1,6 +1,14 @@
+@use '../../app/styles/helpers' as *;
+
 .form-container { 
     width: 90vw;
     max-width: 600px;
+    @include abs-center;
+}
+
+.login-layout{
+    width: 100vw;
+    height: 100vh;
 }
 
 .form-container h1 { 
