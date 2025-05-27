@@ -37,7 +37,11 @@ export function MultipleSelectPlaceholder({ selectedItems, setSelectedItems, pro
   const [personName, setPersonName] = React.useState<string[]>(selectedItems);
 
   const itemsToDisplay = React.useMemo(() => {
-    return productList && productList.length > 0 ? productList : defaultItems;
+    if (Array.isArray(productList) && productList.length > 0) {
+      return productList;
+    }
+  
+    return Array.isArray(defaultItems) ? defaultItems : [];
   }, [productList]);
 
   const handleChange = (event: SelectChangeEvent<typeof personName>) => {
