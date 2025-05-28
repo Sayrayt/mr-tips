@@ -3,27 +3,75 @@ import { useState, useEffect } from 'react';
 import { Input, MultipleSelectPlaceholder, Button } from '@shared/index';
 // import { Transaction } from '@entities/order/model/interfaces/transactions';
 import { types } from 'util';
+import { TransactionsMock } from './__mocks__/transactionsMocks';
+import { TransactionsInterface } from './model/interface/transactionsInterface';
 
 const transactionTypes = ["", "", ""]
 
 export default function Transactions() {
-    const [history, setHistory] = useState<any[]>([]);
+    const [allTransactions, setAllTransactions] = useState<TransactionsInterface[] | []>([])
+    const [history, setHistory] = useState<TransactionsInterface[]>([]);
     const [startDate, setStartDate] = useState<string>("")
     const [endDate, setEndDate] = useState<string>("")
-    const [startAmount, setStartAmount] = useState<number>()
-    const [endAmount, setEndAmount] = useState<number>()
-    const [selectedType, setSelectedType] = useState<string[]>([])
+    const [startAmount, setStartAmount] = useState<number>(0)
+    const [endAmount, setEndAmount] = useState<number>(0)
+    const [selectedType, setSelectedType] = useState<string>("")
 
     useEffect(() => {
-        //тут должен быть запрос всех транзакций
-    }, [])
+        setAllTransactions(TransactionsMock);
+        setHistory(TransactionsMock);
+      }, []);
+      
+      useEffect(() => {
+        console.log("allTransactions изменился:", allTransactions);
+      }, [allTransactions]);
+      
+      useEffect(() => {
+        console.log("history изменился:", history);
+      }, [history]);
 
     /**
      * Обработчик нажатия на кнопку "Применить"
      */
-    const useFilters = () => {
-
-    }
+    const parseCustomDate = (dateStr: string): Date => {
+        const [day, month, year] = dateStr.split('.').map(Number);
+        return new Date(year, month - 1, day);
+      };
+      
+      const normalizeDate = (date: Date): Date => {
+        const d = new Date(date);
+        d.setHours(0, 0, 0, 0);
+        return d;
+      };
+      
+      const useFilters = () => {
+        let filtered = [...allTransactions];
+      
+        if (startDate) {
+          const start = normalizeDate(new Date(startDate));
+          filtered = filtered.filter(tx => normalizeDate(parseCustomDate(tx.date)) >= start);
+        }
+      
+        if (endDate) {
+          const end = normalizeDate(new Date(endDate));
+          end.setDate(end.getDate() + 1);
+          filtered = filtered.filter(tx => normalizeDate(parseCustomDate(tx.date)) < end);
+        }
+      
+        if (startAmount) {
+          filtered = filtered.filter(tx => tx.amount >= startAmount);
+        }
+      
+        if (endAmount) {
+          filtered = filtered.filter(tx => tx.amount <= endAmount);
+        }
+      
+        if (selectedType) {
+          filtered = filtered.filter(tx => tx.type === selectedType);
+        }
+      
+        setHistory(filtered);
+      };
 
     return (
         <div className="transactions">
@@ -41,7 +89,7 @@ export default function Transactions() {
                                     <Input
                                         value={startDate}
                                         onChange={(e) => setStartDate(e.target.value)}
-                                        type="text"
+                                        type="date"
                                         placeholder=""
                                         size="large"
                                     />
@@ -49,7 +97,7 @@ export default function Transactions() {
                                     <Input
                                         value={endDate}
                                         onChange={(e) => setEndDate(e.target.value)}
-                                        type="text"
+                                        type="date"
                                         placeholder=""
                                     />
                                 </div>
@@ -57,7 +105,7 @@ export default function Transactions() {
                             <div className="transactions__field">
                                 <span className="transactions__field-label field-label-t">Сумма транзакций:    </span>
                                 <div className='transactions__field-input-container'>
-                                    <p>с </p>
+                                    <p>от </p>
                                     <Input
                                         value={startAmount}
                                         onChange={(e) => setStartAmount(Number(e.target.value))}
@@ -77,12 +125,11 @@ export default function Transactions() {
                             <div className="transactions__field">
                                 <span className="transactions__field-label field-label-t">Тип транзакций:   </span>
                                 <div className='transactions__field-select-wrapper'>
-                                    <MultipleSelectPlaceholder
-                                        productList={transactionTypes}
-                                        selectedItems={selectedType}
-                                        setSelectedItems={setSelectedType}
-                                        // height='60px'
-                                    />
+                                    <select value={selectedType} onChange={(e) => { setSelectedType(e.target.value) }}>
+                                        <option value="">Выбрать</option>
+                                        <option value="Оплата счёта">Оплата счёта</option>
+                                        <option value="Оплата чаевых">Оплата чаевых</option>
+                                    </select>
                                 </div>
                             </div>
 

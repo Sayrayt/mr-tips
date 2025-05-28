@@ -5,7 +5,7 @@ import React, { ChangeEvent } from 'react';
 
 type InputVariant = 'default' | 'error' | 'success';
 interface InputProps {
-    type?: 'text' | 'password' | 'email' | 'number' | 'tel';
+    type?: 'text' | 'password' | 'email' | 'number' | 'tel' | "date";
     placeholder?: string;
     variant?: InputVariant;
     value?: string | number;

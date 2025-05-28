@@ -39,7 +39,7 @@ export default function Orders() {
             const response = await createOrder(payload);
 
             //! Убрать отрицание
-            const newOrder = response || newOrderMock;
+            const newOrder = !response || newOrderMock;
             // {
             //     orderNumber: history.length + 1,
             //     date: '17.04.2025',
