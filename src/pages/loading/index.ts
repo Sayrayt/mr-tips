@@ -1,1 +1,0 @@
-export { default as Loading } from "@pages/loading/ui/Loading"

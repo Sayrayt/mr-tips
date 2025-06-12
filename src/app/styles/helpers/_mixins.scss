@@ -1,8 +1,0 @@
-@use 'sass:math';
-@use 'functions' as *;
-
-@mixin fluid-text($max: 55, $min: 24) {
-  font-size: fluid($max, $min);
-  line-height: 100%;
-  letter-spacing: 0;
-}

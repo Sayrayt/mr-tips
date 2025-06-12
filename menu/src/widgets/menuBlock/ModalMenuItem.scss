@@ -1,0 +1,125 @@
+@use "../../app/styles/helpers" as *;
+
+.ModalMenuItem {
+    display: flex;
+    align-items: center;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .modalMenuItem__image {
+        flex-shrink: 0;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .modaMenulItem__content {
+
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        span {
+            font-size: 20px;
+        }
+
+        .modalMenuItem__tags {
+            margin-bottom: 20px;
+        }
+
+        .modalMenuItem__name {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .modalMenuItem__info {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .modalMenuItem__details {
+            display: flex;
+        }
+    }
+
+}
+
+@include tablet_768 {
+    .ModalMenuItem {
+        display: flex;
+        height: inherit;
+        align-items: center;
+        flex-direction: column;
+
+        .modaMenulItem__content {
+            width: 100%;
+        }
+    }
+}
+
+@include desktop_1440 {
+    .ModalMenuItem {
+        display: flex;
+        height: inherit;
+        align-items: center;
+        flex-direction: column;
+
+        .modaMenulItem__content {
+            .modalMenuItem__tags {
+                span {
+                    font-size: 1.5vw !important;
+                }
+
+            }
+
+            .modalMenuItem__name {
+                font-size: 2vw !important;
+            }
+
+            .modalMenuItem__info {
+                font-size: 1.5vw !important;
+            }
+
+            .modalMenuItem__details {
+                span {
+                    font-size: 1.5vw !important;
+                }
+            }
+        }
+    }
+}
+
+@include desktop_1920 {
+    .ModalMenuItem {
+        display: flex;
+        height: inherit;
+        align-items: center;
+        flex-direction: column;
+
+        .modaMenulItem__content {
+            .modalMenuItem__tags {
+                span {
+                    font-size: 1.3vw !important;
+                }
+
+            }
+
+            .modalMenuItem__name {
+                font-size: 1.6vw !important;
+            }
+
+            .modalMenuItem__info {
+                font-size: 1.3vw !important;
+            }
+
+            .modalMenuItem__details {
+                span {
+                    font-size: 1.3vw !important;
+                }
+            }
+        }
+    }
+}

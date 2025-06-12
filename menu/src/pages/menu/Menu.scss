@@ -1,0 +1,72 @@
+@use '../../app/styles/helpers' as *;
+
+.menu {
+    width: 100%;
+    min-width: 320px;
+    height: 100vh;
+
+    .menu__content {
+        padding: 0 20px;
+
+        h2 {
+            font-size: 7vw;
+        }
+    }
+}
+
+@include tablet_768 {
+    .menu {
+
+        .menu__content {
+            padding: 0 50px;
+
+            h2 {
+                font-size: 4vw;
+            }
+        }
+
+    }
+}
+
+
+@include desktop_1024 {
+    .menu {
+
+        .menu__content {
+            padding: 0 50px;
+
+            h2 {
+                font-size: 3vw;
+            }
+        }
+
+    }
+}
+
+@include desktop_1440 {
+    .menu {
+
+        .menu__content {
+            padding: 0 100px;
+
+            h2 {
+                font-size: 2vw;
+            }
+        }
+
+    }
+}
+
+@include desktop_1920 {
+    .menu {
+
+        .menu__content {
+            padding: 0 200px;
+
+            h2 {
+                font-size: 1.8vw;
+            }
+        }
+
+    }
+}

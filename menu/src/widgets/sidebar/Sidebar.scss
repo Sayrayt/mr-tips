@@ -1,0 +1,11 @@
+@use "../../app/styles/helpers" as *;
+
+.sidebar {
+    min-width: 320px;
+}
+
+@include desktop_1920 {
+    .sidebar {
+        min-width: 400px;
+    }
+}

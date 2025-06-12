@@ -1,1 +1,0 @@
-export { default as PaymentPage } from "@pages/paymentPage/ui/PaymentPage/PaymentPage";
