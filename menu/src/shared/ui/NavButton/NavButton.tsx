@@ -1,9 +1,8 @@
 import "./NavButton.scss";
 
-import { NavButtonProps } from "@shared/model/interfaces/NavButtonProps";
-import { JSX } from '@emotion/react/jsx-runtime';
+import { NavButtonProps } from "@shared/model/interfaces/NavButtonProps";;
 
-export function NavButton({ placeholder, variant, path, isActive, handleClick }: NavButtonProps): JSX.Element {
+export function NavButton({ placeholder, variant, path, isActive, handleClick }: NavButtonProps) {
     return (
         <div className="navButton__container">
             <a

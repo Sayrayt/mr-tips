@@ -7,10 +7,9 @@ import Fade from '@mui/material/Fade';
 import { IconButton } from '@shared/index';
 import { FiX } from "react-icons/fi";
 
-import { JSX } from '@emotion/react/jsx-runtime';
 import { ModalWindowProps } from '@shared/model/interfaces/ModalWindowProps';
 
-export function ModalWindow({ content, open, handleClose }: ModalWindowProps): JSX.Element {
+export function ModalWindow({ content, open, handleClose }: ModalWindowProps) {
     return (
         <Modal
             open={open}

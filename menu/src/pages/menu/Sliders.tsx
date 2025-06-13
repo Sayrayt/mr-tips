@@ -7,9 +7,8 @@ import { NavButton } from '@shared/index';
 import slide2 from '@assets/images/red.jpg'
 
 import type { Settings } from "react-slick";
-import { JSX } from '@emotion/react/jsx-runtime';
 
-export function Sliders(): JSX.Element {
+export function Sliders() {
     const settings: Settings = {
         dots: false,
         lazyLoad: 'progressive',

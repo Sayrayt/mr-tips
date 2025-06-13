@@ -1,10 +1,9 @@
 import './TipsBlock.scss';
 import { TipsBlockProps } from "@pages/paymentPage/model/interfaces/TipsBlockProps";
-import { JSX } from '@emotion/react/jsx-runtime';
 import { useEffect, useState } from 'react';
 import { PercentButton } from '@shared/index';
 
-export default function TipsBlock({ price }: TipsBlockProps): JSX.Element {
+export default function TipsBlock({ price }: TipsBlockProps) {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
     const [selectedTip, setSelectedTip] = useState<number>(0);
 

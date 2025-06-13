@@ -1,7 +1,6 @@
 import './MenuBlockItem.scss'
 
 import { MenuBlockItemProps } from "@widgets/menuBlock/model/interfaces/MenuBlockItemProps";
-import { JSX } from '@emotion/react/jsx-runtime';
 
 import { ModalWindow } from '@shared/index';
 import ModalMenuItem from './ModalMenuItem';
@@ -9,7 +8,7 @@ import ModalMenuItem from './ModalMenuItem';
 import { useState } from 'react'
 
 
-export default function MenuBlockItem({ image, name, weight, info, price, tags }: MenuBlockItemProps): JSX.Element {
+export default function MenuBlockItem({ image, name, weight, info, price, tags }: MenuBlockItemProps) {
 
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);

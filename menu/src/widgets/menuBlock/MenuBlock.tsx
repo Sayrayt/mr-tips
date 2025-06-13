@@ -4,11 +4,10 @@ import img1 from '@assets/images/classic.png'
 import img2 from '@assets/images/cruas.png'
 
 import { MenuBlockProps } from "@widgets/menuBlock/model/interfaces/MenuBlockProps";
-import { JSX } from '@emotion/react/jsx-runtime';
 
 import MenuBlockItem from '@widgets/menuBlock/MenuBlockItem'
 
-export default function MenuBlock({ title, id }: MenuBlockProps): JSX.Element {
+export default function MenuBlock({ title, id }: MenuBlockProps) {
   const menuItems = [
     {
       id: 'Breakfasts',

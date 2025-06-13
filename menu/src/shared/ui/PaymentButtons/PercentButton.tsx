@@ -1,9 +1,7 @@
 import './PercentButton.scss';
-
-import { JSX } from '@emotion/react/jsx-runtime';
 import { PercentButtonProps } from "@shared/model/interfaces/PercentButtonProps";
 
-export function PercentButton({ action, variant, tipsOption }: PercentButtonProps): JSX.Element {
+export function PercentButton({ action, variant, tipsOption }: PercentButtonProps) {
     const { title, result } = tipsOption;
 
     return (

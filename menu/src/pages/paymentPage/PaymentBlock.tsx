@@ -1,10 +1,9 @@
 import './PaymentBlock.scss';
 import { useState, useEffect } from 'react';
 import { PaymentBlockProps } from "@pages/paymentPage/model/interfaces/PaymentBlockProps";
-import { JSX } from '@emotion/react/jsx-runtime';
 import { PaymentButton } from '@shared/index';
 
-export default function PaymentBlock({ price, dishesCount }: PaymentBlockProps): JSX.Element {
+export default function PaymentBlock({ price, dishesCount }: PaymentBlockProps) {
     const [activeIndex, setActiveIndex] = useState<number | null>(0);
     const [selectedAmount, setSelectedAmount] = useState<number>(price); // Храним выбранную сумму
     const [priceForMyself, setPriceForMyself] = useState(price / 2);

@@ -6,7 +6,6 @@ import { NavButton } from "@shared/ui/NavButton/NavButton";
 import Slider from "react-slick";
 
 import type { Settings } from "react-slick";
-import { JSX } from '@emotion/react/jsx-runtime';
 
 const navButtons = [
     { name: "Завтраки", path: "#Breakfasts" },
@@ -19,7 +18,7 @@ const navButtons = [
     { name: "Тест4", path: "#Test4" },
 ];
 
-export default function NavSlider(): JSX.Element {
+export default function NavSlider() {
 
     const [activePath, setActivePath] = useState<string | null>(navButtons[0]?.path || null);
 

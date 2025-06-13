@@ -1,4 +1,4 @@
-import { JSX } from '@emotion/react/jsx-runtime';
+import { JSX } from 'react';
 
 export interface ModalWindowProps {
     content: JSX.Element,

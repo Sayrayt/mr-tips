@@ -1,8 +1,7 @@
 import './PaymentButton.scss';
-import { JSX } from '@emotion/react/jsx-runtime';
 import { PaymentButtonProps } from "@shared/model/interfaces/PaymentButtonProps";
 
-export function PaymentButton({ variant, action, options, dishesCount, price }: PaymentButtonProps): JSX.Element {
+export function PaymentButton({ variant, action, options, dishesCount, price }: PaymentButtonProps) {
     const { option, title } = options;
 
     return (
